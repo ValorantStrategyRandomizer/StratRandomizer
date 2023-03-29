@@ -6,8 +6,17 @@ import { Listbox, Transition } from '@headlessui/react';
 import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid';
 // Components
 import MapImage from './MapImage';
+import RandomStrat from './strat';
 
-const MapPool = ['Ascent', 'Fracture', 'Haven', 'Icebox', 'Lotus', 'Pearl'];
+const MapPool = [
+  'Ascent',
+  'Fracture',
+  'Haven',
+  'Icebox',
+  'Lotus',
+  'Pearl',
+  'Split',
+];
 const Positions = ['Attacking', 'Defending'];
 
 function classNames(...classes) {
@@ -16,7 +25,8 @@ function classNames(...classes) {
 
 export default function Map() {
   const [selectedMap, setSelectedMap] = useState('Ascent');
-  const [selectedPosition, setSelectedPosition] = useState('Atacking');
+  const [selectedPosition, setSelectedPosition] = useState('Attacking');
+  const [selectedStrat, setSelectedStrat] = useState();
 
   const handleSelectMap = (e) => {
     setSelectedMap(e);
@@ -27,6 +37,8 @@ export default function Map() {
 
   const handleClick = (e) => {
     e.preventDefault();
+    setSelectedStrat(() => RandomStrat);
+    console.log(selectedStrat);
   };
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -249,8 +261,15 @@ export default function Map() {
         </form>
       </div>
       <div>
-        <MapImage selectedMap={selectedMap} />
+        <MapImage
+          selectedMap={selectedMap}
+          selectedPosition={selectedPosition}
+        />
       </div>
+
+      {/* <div>
+        <RandomStrat />
+      </div> */}
     </div>
   );
 }
