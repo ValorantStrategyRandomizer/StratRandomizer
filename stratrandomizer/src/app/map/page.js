@@ -7,6 +7,7 @@ import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid';
 // Components
 import MapImage from './MapImage';
 import RandomStrat from './strat';
+import NavBar from '../ui/NavBar';
 
 const MapPool = [
   'Ascent',
@@ -39,7 +40,10 @@ export default function Map() {
   const handleClick = (e) => {
     e.preventDefault();
     setShowStrat(true);
-    console.log(showStrat);
+
+    setTimeout(() => {
+      setShowStrat(showStrat => !showStrat)
+    }, 5000)
   };
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -48,6 +52,7 @@ export default function Map() {
 
   return (
     <Fragment>
+      <NavBar/>
       <div
         style={{
           display: 'flex',
@@ -272,7 +277,7 @@ export default function Map() {
           />
         </div>
       </div>
-      <div>{showStrat ? <RandomStrat /> : ''}</div>
+      <div>{showStrat ? <RandomStrat/> : ''}</div>
 
       <Transition appear show={showStrat} as={Fragment}>
         <Dialog
@@ -304,11 +309,18 @@ export default function Map() {
                 leaveTo="opacity-0 scale-95"
               >
                 <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                <div className="flex justify-end">
+                  <button type="button"
+                    onClick={() => setShowStrat(false)}>
+                    <strong>&times;</strong>
+                  </button>
+                </div>
+
                   <Dialog.Title
                     as="h3"
                     className="text-lg font-medium leading-6 text-gray-900"
                   >
-                    Payment successful
+                    Here is your strat you iron
                   </Dialog.Title>
                   <div className="mt-2">
                     <p className="text-sm text-gray-500">
