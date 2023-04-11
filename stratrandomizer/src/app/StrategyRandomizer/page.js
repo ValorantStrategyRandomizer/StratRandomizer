@@ -24,7 +24,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
 }
 
-export default function Map() {
+export default function StrategyRandomizer() {
   const [selectedMap, setSelectedMap] = useState('Ascent');
   const [selectedPosition, setSelectedPosition] = useState('Attacking');
   const [showStrat, setShowStrat] = useState(false);
