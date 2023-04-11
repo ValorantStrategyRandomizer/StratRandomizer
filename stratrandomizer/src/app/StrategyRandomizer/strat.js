@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types'
+
 const strats = [
   'Rush A',
   'Rush B',
@@ -11,6 +13,7 @@ const strats = [
   'Mid to B',
   'Utility dump',
 ];
+
 // const strategyObject = {
 //   id: "",
 //   description: "",
@@ -18,7 +21,8 @@ const strats = [
 //   agents: ['agentid-1']
 // }
 
-function getRandomInt(min, max) {
+function getRandomInt(min, max, props) {
+  
   min = Math.ceil(min);
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min) + min); // The maximum is exclusive and the minimum is inclusive
