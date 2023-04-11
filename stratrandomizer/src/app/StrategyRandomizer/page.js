@@ -40,10 +40,6 @@ export default function StrategyRandomizer() {
   const handleClick = (e) => {
     e.preventDefault();
     setShowStrat(true);
-
-    setTimeout(() => {
-      setShowStrat(showStrat => !showStrat)
-    }, 5000)
   };
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -52,7 +48,7 @@ export default function StrategyRandomizer() {
 
   return (
     <Fragment>
-      <NavBar/>
+      {/* <NavBar/> */}
       <div
         style={{
           display: 'flex',
@@ -277,7 +273,7 @@ export default function StrategyRandomizer() {
           />
         </div>
       </div>
-      <div>{showStrat ? <RandomStrat/> : ''}</div>
+      {/* <div>{showStrat ? <RandomStrat /> : ''}</div> */}
 
       <Transition appear show={showStrat} as={Fragment}>
         <Dialog
@@ -309,12 +305,11 @@ export default function StrategyRandomizer() {
                 leaveTo="opacity-0 scale-95"
               >
                 <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
-                <div className="flex justify-end">
-                  <button type="button"
-                    onClick={() => setShowStrat(false)}>
-                    <strong>&times;</strong>
-                  </button>
-                </div>
+                  <div className="flex justify-end">
+                    <button type="button" onClick={() => setShowStrat(false)}>
+                      <strong>&times;</strong>
+                    </button>
+                  </div>
 
                   <Dialog.Title
                     as="h3"

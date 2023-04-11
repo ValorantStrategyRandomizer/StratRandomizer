@@ -3,7 +3,7 @@ import styles from './page.module.css';
 import { Fragment } from 'react';
 
 import Link from 'next/link';
-import NavBar from './ui/NavBar';
+// import NavBar from './ui/NavBar';
 import Footer from './ui/Footer';
 
 const inter = Inter({ subsets: ['latin'] });

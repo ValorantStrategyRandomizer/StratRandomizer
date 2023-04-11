@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types'
+import React from 'react';
 
 const strats = [
   'Rush A',
@@ -13,7 +13,6 @@ const strats = [
   'Mid to B',
   'Utility dump',
 ];
-
 // const strategyObject = {
 //   id: "",
 //   description: "",
@@ -21,8 +20,7 @@ const strats = [
 //   agents: ['agentid-1']
 // }
 
-function getRandomInt(min, max, props) {
-  
+function getRandomInt(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min) + min); // The maximum is exclusive and the minimum is inclusive
@@ -31,7 +29,7 @@ function getRandomInt(min, max, props) {
 const RandomStrat = () => {
   const findLengthAndReturnIndex = (array) => {
     let index;
-    const length = array.length;
+    const length = array.length - 1;
 
     index = getRandomInt(0, length);
 
@@ -43,4 +41,4 @@ const RandomStrat = () => {
   return <div>{strats[i]}</div>;
 };
 
-export default RandomStrat;
+export default React.memo(RandomStrat);
