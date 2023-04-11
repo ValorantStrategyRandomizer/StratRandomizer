@@ -1,9 +1,9 @@
-import { Inter } from 'next/font/google'
-import styles from './page.module.css'
+import { Inter } from 'next/font/google';
+import styles from './page.module.css';
 
-import Link from 'next/link'
+import Link from 'next/link';
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ['latin'] });
 
 export default function Home() {
   return (
@@ -36,17 +36,20 @@ export default function Home() {
               Valorant Strategies to Boost Your Rank!
             </h1>
             <p className="mt-6 text-lg leading-8 text-gray-600">
-              Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet
-              fugiat veniam occaecat fugiat aliqua.
+              Whether you&apos;re plastic 1 or immortal 3, we got the strats for
+              you!
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <a
-                href="#"
+                href="StrategyRandomizer"
                 className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               >
                 Get started
               </a>
-              <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+              <a
+                href="#"
+                className="text-sm font-semibold leading-6 text-gray-900"
+              >
                 Learn more <span aria-hidden="true">→</span>
               </a>
             </div>
@@ -66,7 +69,5 @@ export default function Home() {
         </div>
       </div>
     </main>
-  )
+  );
 }
-
-
