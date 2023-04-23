@@ -1,19 +1,23 @@
 import Image from 'next/image';
 // assets
 import AscentAttack from '../../../public/assets/AscentAttack.png';
-import AscentDefend from '../../../public/assets/AscentDefend.png';
+import AscentDefense from '../../../public/assets/AscentDefense.png';
+import BindAttack from "../../../public/assets/BindAttack.png";
+import BindDefense from "../../../public/assets/BindDefense.png";
+import BreezeAttack from "../../../public/assets/BreezeAttack.png";
+import BreezeDefense from "../../../public/assets/BreezeDefense.png";
 import FractureAttack from '../../../public/assets/FractureAttack.png';
-import FractureDefend from '../../../public/assets/FractureDefend.png';
+import FractureDefense from '../../../public/assets/FractureDefense.png';
 import HavenAttack from '../../../public/assets/HavenAttack.png';
-import HavenDefend from '../../../public/assets/HavenDefend.png';
+import HavenDefense from '../../../public/assets/HavenDefense.png';
 import IceboxAttack from '../../../public/assets/IceboxAttack.png';
-import IceboxDefend from '../../../public/assets/IceboxDefend.png';
+import IceboxDefense from '../../../public/assets/IceboxDefense.png';
 import LotusAttack from '../../../public/assets/LotusAttack.png';
-import LotusDefend from '../../../public/assets/LotusDefend.png';
+import LotusDefense from '../../../public/assets/LotusDefense.png';
 import PearlAttack from '../../../public/assets/PearlAttack.png';
-import PearlDefend from '../../../public/assets/PearlDefend.png';
+import PearlDefense from '../../../public/assets/PearlDefense.png';
 import SplitAttack from '../../../public/assets/SplitAttack.png';
-import SplitDefend from '../../../public/assets/SplitDefend.png';
+import SplitDefense from '../../../public/assets/SplitDefense.png';
 
 const MapImage = ({ selectedMap, selectedPosition }) => {
   return (
@@ -25,19 +29,29 @@ const MapImage = ({ selectedMap, selectedPosition }) => {
         )}
       {selectedMap === 'Ascent' &&
         selectedPosition === 'Defending' &&
-        AscentDefend && (
-          <Image src={AscentDefend} alt="Image of Ascent Map" width={500} />
+        AscentDefense && (
+          <Image src={AscentDefense} alt="Image of Ascent Map" width={500} />
         )}
-      {/* {selectedMap === 'Bind' &&
+      {selectedMap === 'Bind' &&
         selectedPosition === 'Attacking' &&
-        BindPicture && (
+        BindAttack && (
           <Image src={BindAttack} alt="Image of Bind Map" width={500} />
         )}
       {selectedMap === 'Bind' &&
         selectedPosition === 'Defending' &&
-        BindPicture && (
-          <Image src={BindDefend} alt="Image of Bind Map" width={500} />
-        )} */}
+        BindDefense && (
+          <Image src={BindDefense} alt="Image of Bind Map" width={500} />
+        )}
+      {selectedMap === 'Breeze' &&
+        selectedPosition === 'Attacking' &&
+        BreezeAttack && (
+          <Image src={BreezeAttack} alt="Image of Breeze Map" width={500} />
+        )}
+      {selectedMap === 'Breeze' &&
+        selectedPosition === 'Defending' &&
+        BreezeDefense && (
+          <Image src={BreezeDefense} alt="Image of Breeze Map" width={500} />
+        )}
       {selectedMap === 'Pearl' &&
         selectedPosition === 'Attacking' &&
         PearlAttack && (
@@ -45,8 +59,8 @@ const MapImage = ({ selectedMap, selectedPosition }) => {
         )}
       {selectedMap === 'Pearl' &&
         selectedPosition === 'Defending' &&
-        PearlDefend && (
-          <Image src={PearlDefend} alt="Image of Pearl Map" width={500} />
+        PearlDefense&& (
+          <Image src={PearlDefense} alt="Image of Pearl Map" width={500} />
         )}
       {selectedMap === 'Haven' &&
         selectedPosition === 'Attacking' &&
@@ -55,8 +69,8 @@ const MapImage = ({ selectedMap, selectedPosition }) => {
         )}
       {selectedMap === 'Haven' &&
         selectedPosition === 'Defending' &&
-        HavenDefend && (
-          <Image src={HavenDefend} alt="Image of Haven Map" width={500} />
+        HavenDefense&& (
+          <Image src={HavenDefense} alt="Image of Haven Map" width={500} />
         )}
       {selectedMap === 'Lotus' &&
         selectedPosition === 'Attacking' &&
@@ -65,8 +79,8 @@ const MapImage = ({ selectedMap, selectedPosition }) => {
         )}
       {selectedMap === 'Lotus' &&
         selectedPosition === 'Defending' &&
-        LotusDefend && (
-          <Image src={LotusDefend} alt="Image of Lotus Map" width={500} />
+        LotusDefense&& (
+          <Image src={LotusDefense} alt="Image of Lotus Map" width={500} />
         )}
       {selectedMap === 'Icebox' &&
         selectedPosition === 'Attacking' &&
@@ -75,8 +89,8 @@ const MapImage = ({ selectedMap, selectedPosition }) => {
         )}
       {selectedMap === 'Icebox' &&
         selectedPosition === 'Defending' &&
-        IceboxDefend && (
-          <Image src={IceboxDefend} alt="Image of Icebox Map" width={500} />
+        IceboxDefense&& (
+          <Image src={IceboxDefense} alt="Image of Icebox Map" width={500} />
         )}
       {selectedMap === 'Fracture' &&
         selectedPosition === 'Attacking' &&
@@ -85,8 +99,8 @@ const MapImage = ({ selectedMap, selectedPosition }) => {
         )}
       {selectedMap === 'Fracture' &&
         selectedPosition === 'Defending' &&
-        FractureDefend && (
-          <Image src={FractureDefend} alt="Image of Fracture Map" width={500} />
+        FractureDefense&& (
+          <Image src={FractureDefense} alt="Image of Fracture Map" width={500} />
         )}
       {selectedMap === 'Split' &&
         selectedPosition === 'Attacking' &&
@@ -95,8 +109,8 @@ const MapImage = ({ selectedMap, selectedPosition }) => {
         )}
       {selectedMap === 'Split' &&
         selectedPosition === 'Defending' &&
-        SplitDefend && (
-          <Image src={SplitDefend} alt="Image of Split Map" width={500} />
+        SplitDefense&& (
+          <Image src={SplitDefense} alt="Image of Split Map" width={500} />
         )}
     </div>
   );
