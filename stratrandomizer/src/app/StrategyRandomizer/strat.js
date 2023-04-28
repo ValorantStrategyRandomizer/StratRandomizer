@@ -13,29 +13,23 @@ const strats = [
   'Mid to B',
   'Utility dump',
 ];
-// const strategyObject = {
-//   id: "",
-//   description: "",
-//   viableMaps: ['mapid-1'],
-//   agents: ['agentid-1']
-// }
 
-function getRandomInt(min, max) {
+export const getRandomInt = (min, max) => {
   min = Math.ceil(min);
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min) + min); // The maximum is exclusive and the minimum is inclusive
 }
 
+export const findLengthAndReturnIndex = (array) => {
+  let index;
+  const length = array.length - 1;
+
+  index = getRandomInt(0, length);
+
+  return index;
+};
+
 const RandomStrat = () => {
-  const findLengthAndReturnIndex = (array) => {
-    let index;
-    const length = array.length - 1;
-
-    index = getRandomInt(0, length);
-
-    return index;
-  };
-
   const i = findLengthAndReturnIndex(strats);
 
   return <div>{strats[i]}</div>;
