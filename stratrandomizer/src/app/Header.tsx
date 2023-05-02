@@ -64,7 +64,7 @@ function classNames(...classes: string[]) {
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { theme, setTheme } = useTheme();
-  console.info(`im the theme: `, theme);
+
   return (
     <header className="header-z-index">
       <nav
@@ -124,10 +124,7 @@ export default function Header() {
                         />
                       </div>
                       <div className="flex-auto">
-                        <a
-                          href={item.href}
-                          className="block font-semibold"
-                        >
+                        <a href={item.href} className="block font-semibold">
                           {item.name}
                           <span className="absolute inset-0" />
                         </a>
@@ -166,25 +163,14 @@ export default function Header() {
           </a>
         </Popover.Group>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:align-center">
-          {/* <Toggle state={Boolean(theme)} setState={() => setTheme(false)} /> */}
-          <Switch
-            checked={theme === 'dark'}
-            onChange={
+          <Toggle
+            state={theme === 'dark'}
+            setState={
               theme === 'dark'
                 ? () => setTheme('light')
                 : () => setTheme('dark')
             }
-            className={`${
-              theme === 'dark' ? 'bg-blue-600' : 'bg-gray-200'
-            } relative inline-flex h-6 w-11 items-center rounded-full`}
-          >
-            <span className="sr-only">Enable Something</span>
-            <span
-              className={`${
-                theme === 'dark' ? 'translate-x-6' : 'translate-x-1'
-              } inline-block h-4 w-4 transform rounded-full bg-white transition`}
-            />
-          </Switch>
+          />
         </div>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           <a href="#" className="text-sm font-semibold leading-6">
