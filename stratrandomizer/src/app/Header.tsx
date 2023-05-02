@@ -1,7 +1,8 @@
 'use client';
 
 import { Fragment, useState } from 'react';
-import { Dialog, Disclosure, Popover, Transition } from '@headlessui/react';
+import { useTheme } from 'next-themes';
+import { Dialog, Disclosure, Popover, Transition, Switch } from '@headlessui/react';
 import {
   ArrowPathIcon,
   Bars3Icon,
@@ -62,7 +63,8 @@ function classNames(...classes: string[]) {
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
+  const { theme, setTheme } = useTheme();
+  console.info(`im the theme: `, theme);
   return (
     <header className="bg-white header-z-index">
       <nav
@@ -164,7 +166,25 @@ export default function Header() {
           </a>
         </Popover.Group>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:align-center">
-          <Toggle />
+          {/* <Toggle state={Boolean(theme)} setState={() => setTheme(false)} /> */}
+          <Switch
+            checked={theme === 'dark'}
+            onChange={
+              theme === 'dark'
+                ? () => setTheme('light')
+                : () => setTheme('dark')
+            }
+            className={`${
+              theme === 'dark' ? 'bg-blue-600' : 'bg-gray-200'
+            } relative inline-flex h-6 w-11 items-center rounded-full`}
+          >
+            <span className="sr-only">Enable Something</span>
+            <span
+              className={`${
+                theme === 'dark' ? 'translate-x-6' : 'translate-x-1'
+              } inline-block h-4 w-4 transform rounded-full bg-white transition`}
+            />
+          </Switch>
         </div>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
