@@ -16,6 +16,8 @@ import {
   ChevronDownIcon,
   PhoneIcon,
   PlayCircleIcon,
+  MoonIcon,
+  SunIcon
 } from '@heroicons/react/20/solid';
 // Components
 import Toggle from './ui/components/Toggle';
@@ -163,6 +165,8 @@ export default function Header() {
           </a>
         </Popover.Group>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:align-center">
+          <SunIcon className="h-6 w-6" aria-hidden="true" />
+
           <Toggle
             state={theme === 'dark'}
             setState={
@@ -171,6 +175,7 @@ export default function Header() {
                 : () => setTheme('dark')
             }
           />
+          <MoonIcon className="h-6 w-6" aria-hidden="true" />
         </div>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           <a href="#" className="text-sm font-semibold leading-6">
