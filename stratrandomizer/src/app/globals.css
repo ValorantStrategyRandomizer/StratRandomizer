@@ -29,13 +29,14 @@ a {
   text-decoration: none;
 }
 
-:root {
-  /* Your default theme */
-  --background: white;
-  --foreground: black;
+html,
+body {
+  color: #000;
+  background: #fff;
 }
 
-[data-theme='dark'] {
-  --background: black;
-  --foreground: white;
+[data-theme='dark'],
+[data-theme='dark'] body {
+  color: #fff;
+  background: #000;
 }
