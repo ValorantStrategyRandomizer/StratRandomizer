@@ -102,7 +102,7 @@ export default function StrategyRandomizer() {
                 <Listbox value={selectedMode} onChange={setSelectedMode}>
                   {({ open }) => (
                     <>
-                      <Listbox.Label className="block text-sm font-medium leading-6 text-gray-900">
+                      <Listbox.Label className="block text-sm font-medium leading-6">
                         Select Game Mode
                       </Listbox.Label>
                       <div className="relative mt-2">
@@ -192,7 +192,7 @@ export default function StrategyRandomizer() {
                 <Listbox value={selectedMap} onChange={handleSelectMap}>
                   {({ open }) => (
                     <>
-                      <Listbox.Label className="block text-sm font-medium leading-6 text-gray-900">
+                      <Listbox.Label className="block text-sm font-medium leading-6">
                         Select Map
                       </Listbox.Label>
                       <div className="relative mt-2">
@@ -285,7 +285,7 @@ export default function StrategyRandomizer() {
                 >
                   {({ open }) => (
                     <>
-                      <Listbox.Label className="block text-sm font-medium leading-6 text-gray-900">
+                      <Listbox.Label className="block text-sm font-medium leading-6">
                         Select Position
                       </Listbox.Label>
                       <div className="relative mt-2">
