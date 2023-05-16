@@ -1,23 +1,23 @@
 import Image from 'next/image';
 // assets
-import AscentAttack from '../../../public/assets/AscentAttack.png';
-import AscentDefense from '../../../public/assets/AscentDefense.png';
-import BindAttack from "../../../public/assets/BindAttack.png";
-import BindDefense from "../../../public/assets/BindDefense.png";
-import BreezeAttack from "../../../public/assets/BreezeAttack.png";
-import BreezeDefense from "../../../public/assets/BreezeDefense.png";
-import FractureAttack from '../../../public/assets/FractureAttack.png';
-import FractureDefense from '../../../public/assets/FractureDefense.png';
-import HavenAttack from '../../../public/assets/HavenAttack.png';
-import HavenDefense from '../../../public/assets/HavenDefense.png';
-import IceboxAttack from '../../../public/assets/IceboxAttack.png';
-import IceboxDefense from '../../../public/assets/IceboxDefense.png';
-import LotusAttack from '../../../public/assets/LotusAttack.png';
-import LotusDefense from '../../../public/assets/LotusDefense.png';
-import PearlAttack from '../../../public/assets/PearlAttack.png';
-import PearlDefense from '../../../public/assets/PearlDefense.png';
-import SplitAttack from '../../../public/assets/SplitAttack.png';
-import SplitDefense from '../../../public/assets/SplitDefense.png';
+import AscentAttack from 'public/assets/AscentAttack.png';
+import AscentDefense from 'public/assets/AscentDefense.png';
+import BindAttack from "public/assets/BindAttack.png";
+import BindDefense from "public/assets/BindDefense.png";
+import BreezeAttack from "public/assets/BreezeAttack.png";
+import BreezeDefense from "public/assets/BreezeDefense.png";
+import FractureAttack from 'public/assets/FractureAttack.png';
+import FractureDefense from 'public/assets/FractureDefense.png';
+import HavenAttack from 'public/assets/HavenAttack.png';
+import HavenDefense from 'public/assets/HavenDefense.png';
+import IceboxAttack from 'public/assets/IceboxAttack.png';
+import IceboxDefense from 'public/assets/IceboxDefense.png';
+import LotusAttack from 'public/assets/LotusAttack.png';
+import LotusDefense from 'public/assets/LotusDefense.png';
+import PearlAttack from 'public/assets/PearlAttack.png';
+import PearlDefense from 'public/assets/PearlDefense.png';
+import SplitAttack from 'public/assets/SplitAttack.png';
+import SplitDefense from 'public/assets/SplitDefense.png';
 
 const MapImage = ({ selectedMap, selectedPosition }) => {
   return (
