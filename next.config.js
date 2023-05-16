@@ -1,10 +1,15 @@
 /** @type {import('next').NextConfig} */
-
 const isProd = process.env.NODE_ENV === 'production';
 
-module.exports = {
-  assetPrefix: isProd ? '/your-github-repo-name/' : '',
+const nextConfig = {
+  assetPrefix: isProd ? '/StratRandomizer/' : '',
   images: {
     unoptimized: true,
   },
+  experimental: {
+    appDir: true,
+  }
 };
+
+
+module.exports = nextConfig;
