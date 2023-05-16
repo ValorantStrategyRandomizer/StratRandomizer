@@ -74,7 +74,14 @@ export default function Header() {
           aria-label="Global"
         >
           <div className="flex lg:flex-1">
-            <a href="/" className="-m-1.5 p-1.5">
+            <a
+              href={
+                process.env.NODE_ENV === 'production'
+                  ? `${process.env.pathPrefix}`
+                  : "/"
+              }
+              className="-m-1.5 p-1.5"
+            >
               <span className="sr-only">Your Company</span>
               <Image
                 className="h-8 w-auto"
@@ -131,7 +138,7 @@ export default function Header() {
                           <a
                             href={
                               process.env.NODE_ENV === 'production'
-                                ? `${process.env.pathPrefix}/${item.href}`
+                                ? `${process.env.pathPrefix}${item.href}`
                                 : item.href
                             }
                             className="block font-semibold"
