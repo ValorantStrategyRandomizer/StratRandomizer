@@ -1,5 +1,6 @@
 'use client';
 import Image from 'next/image';
+import Link from "next/link";
 import { Fragment, useState } from 'react';
 import { useTheme } from 'next-themes';
 import { Dialog, Disclosure, Popover, Transition, Switch } from '@headlessui/react';
@@ -73,7 +74,14 @@ export default function Header() {
           aria-label="Global"
         >
           <div className="flex lg:flex-1">
-            <a href="/#" className="-m-1.5 p-1.5">
+            <a
+              href={
+                process.env.NODE_ENV === 'production'
+                  ? `${process.env.pathPrefix}`
+                  : "/"
+              }
+              className="-m-1.5 p-1.5"
+            >
               <span className="sr-only">Your Company</span>
               <Image
                 className="h-8 w-auto"
@@ -127,7 +135,14 @@ export default function Header() {
                           />
                         </div>
                         <div className="flex-auto">
-                          <a href={item.href} className="block font-semibold">
+                          <a
+                            href={
+                              process.env.NODE_ENV === 'production'
+                                ? `${process.env.pathPrefix}${item.href}`
+                                : item.href
+                            }
+                            className="block font-semibold"
+                          >
                             {item.name}
                             <span className="absolute inset-0" />
                           </a>
