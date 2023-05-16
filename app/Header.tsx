@@ -62,12 +62,6 @@ function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ');
 }
 
-const PrefixedLink = ({ href, as = href, children, ...props }) => (
-  <Link href={href} as={`${process.env.pathPrefix}${as}`} {...props}>
-    {children}
-  </Link>
-);
-
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { theme, setTheme } = useTheme();
@@ -80,7 +74,7 @@ export default function Header() {
           aria-label="Global"
         >
           <div className="flex lg:flex-1">
-            <PrefixedLink href="/" as={"/"} className="-m-1.5 p-1.5">
+            <a href="/" className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
               <Image
                 className="h-8 w-auto"
@@ -89,7 +83,7 @@ export default function Header() {
                 height="50"
                 alt=""
               />
-            </PrefixedLink>
+            </a>
           </div>
           <div className="flex lg:hidden">
             <button
@@ -134,10 +128,17 @@ export default function Header() {
                           />
                         </div>
                         <div className="flex-auto">
-                          <PrefixedLink href={item.href} as={item.href} className="block font-semibold">
+                          <a
+                            href={
+                              process.env.NODE_ENV === 'production'
+                                ? `${process.env.pathPrefix}/${item.href}`
+                                : item.href
+                            }
+                            className="block font-semibold"
+                          >
                             {item.name}
                             <span className="absolute inset-0" />
-                          </PrefixedLink>
+                          </a>
                           <p className="mt-1">{item.description}</p>
                         </div>
                       </div>
