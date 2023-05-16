@@ -7,7 +7,6 @@ import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid';
 // Components
 import MapImage from './MapImage';
 import RandomStrat from './strat';
-import NavBar from '../ui/NavBar';
 
 const CompetitiveMapPool = [
   'Ascent',
@@ -77,7 +76,6 @@ export default function StrategyRandomizer() {
 
   return (
     <Fragment>
-      {/* <NavBar/> */}
       <div
         style={{
           display: 'flex',
