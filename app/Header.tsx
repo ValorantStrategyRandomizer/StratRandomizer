@@ -1,5 +1,6 @@
 'use client';
 import Image from 'next/image';
+import Link from "next/link";
 import { Fragment, useState } from 'react';
 import { useTheme } from 'next-themes';
 import { Dialog, Disclosure, Popover, Transition, Switch } from '@headlessui/react';
@@ -61,6 +62,12 @@ function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ');
 }
 
+const PrefixedLink = ({ href, as = href, children, ...props }) => (
+  <Link href={href} as={`${process.env.pathPrefix}${as}`} {...props}>
+    {children}
+  </Link>
+);
+
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { theme, setTheme } = useTheme();
@@ -73,7 +80,7 @@ export default function Header() {
           aria-label="Global"
         >
           <div className="flex lg:flex-1">
-            <a href="/#" className="-m-1.5 p-1.5">
+            <PrefixedLink href="/" as={"/"} className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
               <Image
                 className="h-8 w-auto"
@@ -82,7 +89,7 @@ export default function Header() {
                 height="50"
                 alt=""
               />
-            </a>
+            </PrefixedLink>
           </div>
           <div className="flex lg:hidden">
             <button
@@ -127,10 +134,10 @@ export default function Header() {
                           />
                         </div>
                         <div className="flex-auto">
-                          <a href={item.href} className="block font-semibold">
+                          <PrefixedLink href={item.href} as={item.href} className="block font-semibold">
                             {item.name}
                             <span className="absolute inset-0" />
-                          </a>
+                          </PrefixedLink>
                           <p className="mt-1">{item.description}</p>
                         </div>
                       </div>
