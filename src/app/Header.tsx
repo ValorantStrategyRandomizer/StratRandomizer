@@ -26,7 +26,7 @@ const products = [
   {
     name: 'Strategy Randomizer',
     description: 'Generate a Random Strat',
-    href: '/StrategyRandomizer',
+    href: '/randomizer',
     icon: ChartPieIcon,
   },
   {
