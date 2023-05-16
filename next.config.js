@@ -1,19 +1,11 @@
 /** @type {import('next').NextConfig} */
-const isProd = process.env.NODE_ENV === 'production';
 
 const nextConfig = {
-  assetPrefix: isProd ? '/StratRandomizer/' : '',
+  images: { unoptimized: true },
   experimental: {
     appDir: true,
   },
-  exportPathMap: async function (
-    defaultPathMap,
-    { dev, dir, outDir, distDir, buildId }
-  ) {
-    return {
-      '/randomizer': { page: '/randomizer' },
-    };
-  },
+  output: 'export',
 };
 
 

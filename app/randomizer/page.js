@@ -6,7 +6,7 @@ import { Listbox, Transition, Dialog } from '@headlessui/react';
 import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid';
 // Components
 import MapImage from './MapImage';
-import RandomStrat from './strat';
+import RandomStrat from './Strat';
 
 const CompetitiveMapPool = [
   'Ascent',
@@ -390,8 +390,6 @@ export default function StrategyRandomizer() {
           />
         </div>
       </div>
-      {/* <div>{showStrat ? <RandomStrat /> : ''}</div> */}
-
       <Transition appear show={showStrat} as={Fragment}>
         <Dialog
           as="div"
