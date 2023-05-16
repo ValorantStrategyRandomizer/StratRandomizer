@@ -68,7 +68,7 @@ export default function Header() {
   const { theme, setTheme } = useTheme();
 
   return (
-    <header className="header-z-index">
+    <><header className="header-z-index">
       <nav
         className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
         aria-label="Global"
@@ -79,8 +79,7 @@ export default function Header() {
             <img
               className="h-8 w-auto"
               src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-              alt=""
-            />
+              alt="" />
           </a>
         </div>
         <div className="flex lg:hidden">
@@ -99,8 +98,7 @@ export default function Header() {
               Product
               <ChevronDownIcon
                 className="h-5 w-5 flex-none"
-                aria-hidden="true"
-              />
+                aria-hidden="true" />
             </Popover.Button>
 
             <Transition
@@ -122,8 +120,7 @@ export default function Header() {
                       <div className="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50">
                         <item.icon
                           className="h-6 w-6 group-hover:text-indigo-600"
-                          aria-hidden="true"
-                        />
+                          aria-hidden="true" />
                       </div>
                       <div className="flex-auto">
                         <a href={item.href} className="block font-semibold">
@@ -144,8 +141,7 @@ export default function Header() {
                     >
                       <item.icon
                         className="h-5 w-5 flex-none"
-                        aria-hidden="true"
-                      />
+                        aria-hidden="true" />
                       {item.name}
                     </a>
                   ))}
@@ -166,29 +162,30 @@ export default function Header() {
         </Popover.Group>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:align-center">
           <SunIcon className="h-6 w-6" aria-hidden="true" />
-
-          <Toggle
-            state={theme === 'dark'}
-            setState={
-              theme === 'dark'
-                ? () => setTheme('light')
-                : () => setTheme('dark')
-            }
-          />
-          <MoonIcon className="h-6 w-6" aria-hidden="true" />
-        </div>
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <a href="#" className="text-sm font-semibold leading-6">
-            Log in <span aria-hidden="true">&rarr;</span>
-          </a>
-        </div>
-      </nav>
-      <Dialog
-        as="div"
-        className="lg:hidden"
-        open={mobileMenuOpen}
-        onClose={setMobileMenuOpen}
-      >
+          <Switch
+            checked={theme === 'dark'}
+            onChange={theme === 'dark'
+              ? () => setTheme('light')
+              : () => setTheme('dark')}
+            className={`${theme === 'dark' ? 'bg-blue-600' : 'bg-gray-200'} relative inline-flex h-6 w-11 items-center rounded-full`}
+          >
+          <span className="sr-only">Enable Something</span>
+          <span
+            className={`${theme === 'dark' ? 'translate-x-6' : 'translate-x-1'} inline-block h-4 w-4 transform rounded-full bg-white transition`} />
+        </Switch>
+        <MoonIcon className="h-6 w-6" aria-hidden="true" />
+      </div>
+      <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+        <a href="#" className="text-sm font-semibold leading-6">
+          Log in <span aria-hidden="true">&rarr;</span>
+        </a>
+      </div>
+    </nav><Dialog
+      as="div"
+      className="lg:hidden"
+      open={mobileMenuOpen}
+      onClose={setMobileMenuOpen}
+    >
         <div className="fixed inset-0 z-10" />
         <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
@@ -197,8 +194,7 @@ export default function Header() {
               <img
                 className="h-8 w-auto"
                 src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                alt=""
-              />
+                alt="" />
             </a>
             <button
               type="button"
@@ -222,8 +218,7 @@ export default function Header() {
                             open ? 'rotate-180' : '',
                             'h-5 w-5 flex-none'
                           )}
-                          aria-hidden="true"
-                        />
+                          aria-hidden="true" />
                       </Disclosure.Button>
                       <Disclosure.Panel className="mt-2 space-y-2">
                         {[...products, ...callsToAction].map((item) => (
@@ -272,5 +267,6 @@ export default function Header() {
         </Dialog.Panel>
       </Dialog>
     </header>
+    </>
   );
 }
